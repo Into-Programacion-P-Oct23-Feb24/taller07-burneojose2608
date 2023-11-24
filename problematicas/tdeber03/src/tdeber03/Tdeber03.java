@@ -15,10 +15,11 @@ public class Tdeber03 {
 
     /**
      * @param args the command line arguments
+     * @return 
      */
     public static void main(String[] args) {
          
-         int limite = 15;
+      int limite = 15;
         int numerador = 1;
         int denominador = 1;
         String signo;
@@ -27,7 +28,7 @@ public class Tdeber03 {
         double v2;
         do {
             // para manejar el signo asociado 
-            if (denominador % 2 == 0) {
+            if (denominador % 2 == 1) {
                 signo = "-";
                 v2 = -numerador/denominador;
                 resultado = resultado + v2;
@@ -40,7 +41,8 @@ public class Tdeber03 {
                     cadena,
                     signo,
                     numerador, 
-                    denominador);
+                    denominador,
+                    resultado);
             denominador = denominador + 2;
            
            
@@ -50,8 +52,9 @@ public class Tdeber03 {
 
         System.out.println(cadena);
         System.out.println("resultado"+resultado);
+       
 
-    }
+  }
 }
-    
+  
     
