@@ -30,34 +30,31 @@ public class Ejercicio1 {
         double promedio_estatura = 0;
         int edad ;
         int contador = 1;
-        int limite= 100;
-        
-       
+        int limite ;
+        //
+         System.out.println("Cuantas jugadores va a ingresar");
+            limite = entrada .nextInt();
         
         do {
+          entrada.nextLine();
             System.out.println("Ingrese el nombre del jugador:");
              nombre = entrada.nextLine();
-               System.out.println("Ingrese la estatura del jugador:");
-             estatura = entrada.nextDouble();
              System.out.println("Ingrese la posicion de juego:");
              posicion = entrada.nextLine();
+             
+               System.out.println("Ingrese la estatura del jugador:");
+             estatura = entrada.nextDouble();
               System.out.println("Ingrese la edad del jugador:");
              edad = entrada.nextInt();
-           
-      
-  
-             jugadores = String.format("%s%d. %s -%s-,edad %d, estatura %.2f\n",
-                    jugadores,contador,nombre,posicion,estatura,
-                    edad);
+      jugadores = String.format("%s\n%d. %s -%s-,edad %d, estatura %.2f\n",
+                    jugadores,contador,nombre,posicion,edad,
+                    estatura);
                    
              listado_edades = String.format("%s%d \n",
                     listado_edades,edad);
              promedio_edades =(promedio_edades + edad)/ contador;
              promedio_estatura =(promedio_estatura + estatura)/ contador;
              contador = contador + 1;
-             
-             
-          
 
         } while (contador <= limite); 
             

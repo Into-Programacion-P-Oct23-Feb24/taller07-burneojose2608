@@ -15,6 +15,33 @@ public class Ejercicio4 {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        int numerador = 0;
+        int denominador = 3;
+        int contador = 0;
+        String cadena = "1 ";
+     
+        
+        do {
+            if (contador %2 == 0){
+             numerador = +1 / denominador;
+             cadena = String.format("%s- 1/ %d\n ", 
+                     cadena, 
+                     denominador);
+            } else {
+            numerador = -1 / denominador;
+            cadena = String.format("%s+ 1/ %d\n ",
+                    cadena,
+                    denominador);
+            }
+           
+            denominador = denominador + 2;
+            
+            contador = contador + 1;
+            
+            
+        } while (contador <= 5);
+        
+        System.out.printf("%s\n",cadena);
     }
     
 }
