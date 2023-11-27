@@ -15,7 +15,7 @@ public class Tdeber03 {
 
     /**
      * @param args the command line arguments
-     * @return 
+     * 
      */
     public static void main(String[] args) {
          
@@ -25,16 +25,16 @@ public class Tdeber03 {
         String signo;
         String cadena = "";
         double resultado = 0;
-        double v2;
+        int i = 2;
         do {
+       
             // para manejar el signo asociado 
-            if (denominador % 2 == 1) {
-                signo = "-";
-                v2 = -numerador/denominador;
-                resultado = resultado + v2;
-            } else {
+            if (denominador == i + 2) {
                 signo = "+";
-                resultado = resultado + numerador/denominador;
+              
+            } else {
+                signo = "-";
+               
             }
             
             cadena = String.format("%s%s%d/%d\n ", 
@@ -44,6 +44,7 @@ public class Tdeber03 {
                     denominador,
                     resultado);
             denominador = denominador + 2;
+            resultado = denominador + denominador -denominador; 
            
            
 

@@ -20,16 +20,19 @@ public class Ejercicio1 {
         // TODO code application logic here
         Scanner entrada = new Scanner(System.in);
         entrada.useLocale(Locale.US);
-        String cadenaFinal;
+       
         double estatura ;
-        int salida;
         String nombre; 
         String posicion;
-        boolean bandera = true;
+        String jugadores = "Listado de jugadores";
+        String listado_edades = "Listado de edades" ;
+        double promedio_edades = 0;
+        double promedio_estatura = 0;
         int edad ;
-        int contador_calificaciones = 0;
+        int contador = 1;
+        int limite= 100;
         
-        cadenaFinal = "Jugadores de futbol\n";
+       
         
         do {
             System.out.println("Ingrese el nombre del jugador:");
@@ -41,30 +44,28 @@ public class Ejercicio1 {
               System.out.println("Ingrese la edad del jugador:");
              edad = entrada.nextInt();
            
-            contador_calificaciones = contador_calificaciones + 1;
-            
-          
-             
-            
+      
   
-             cadenaFinal = String.format("%snombre% dposicion %s\n",
-                    cadenaFinal,
-                    posicion,nombre,edad,estatura);
+             jugadores = String.format("%s%d. %s -%s-,edad %d, estatura %.2f\n",
+                    jugadores,contador,nombre,posicion,estatura,
+                    edad);
+                   
+             listado_edades = String.format("%s%d \n",
+                    listado_edades,edad);
+             promedio_edades =(promedio_edades + edad)/ contador;
+             promedio_estatura =(promedio_estatura + estatura)/ contador;
+             contador = contador + 1;
              
-                 
-            System.out.println("Ingrese (2) si desea salir del ciclo; "
-                    + "cualquier otro número para continuar");
-            salida = entrada.nextInt();
+             
+          
 
-            if (salida == -2) {
-                bandera = false;
-            }
+        } while (contador <= limite); 
             
-            entrada.nextLine(); 
-
-        } while (bandera); 
-            
-        System.out.printf("%s\n", cadenaFinal);
+        System.out.printf("""
+                          %s%spromedio de edades: %.2f
+                           promedio de estaturas:%.2f
+                          """,jugadores,listado_edades,promedio_edades,
+                promedio_estatura);
        
     }
 
